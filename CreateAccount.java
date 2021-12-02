@@ -48,10 +48,6 @@ public class CreateAccount {
         return false;
     }
 
-//    public static boolean loginPass(String loginID){
-//
-//        return checkLength(loginID) && !checkExisting(loginID) && !hasExceptionalCharacters(loginID);
-//    }
 
     public static boolean checkPwdLength(String argPwd){
         if(MIN_LENGTH_PWD <= argPwd.length()  &&  argPwd.length() <= MAX_LENGTH_PWD){
@@ -82,10 +78,6 @@ public class CreateAccount {
         //checked all characters in the incoming string
         return( foundLetter && foundNumber && foundSpecialChar );
     }
-
-//    public static boolean validPwd(String pwd){
-//        return checkLength_Pwd(pwd) && hasValidCharacters(pwd);
-//    }
 
     public static boolean checkPwd1Pwd2(String argPwd1, String argPwd2){
         if( argPwd1.equals(argPwd2) ){

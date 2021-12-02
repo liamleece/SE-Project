@@ -6,14 +6,6 @@ public class createEvent
     public static String[] existingEventsIDs = {"Monster Bash", "Software Engineering", "Prom Night", "Old Man Yells At Cloud"};
     public static char[] badChars = {',', '/', '\\'};
 
-  /*  public static boolean checkEventLength(String argEventID){
-
-        if(MIN_LENGTH_Event_ID <= argEventID.length()  &&  argEventID.length() <= MAX_LENGTH_Event_ID){
-            return true;
-        }else{
-            return false;
-        }
-    }*/
     public static boolean checkEventExisting(String argEventID){
         for(String id : existingEventsIDs) {
             if(argEventID.equals(id)){
@@ -71,67 +63,27 @@ public class createEvent
         return true;
     }
     public static boolean checkDateValue(String str) {
-    char c = ' ';
-    for (int i = 0; i < str.length(); i++) {
-        c = str.charAt(i);
-        switch (i) {
-            case 0: if (Character.valueOf(c) > 1 || Character.valueOf(c) < 0) { return false; } else break;
-            case 1:
-            case 4:
-            case 7:
-            case 8:
-            case 9: if (Character.valueOf(c) > 9 || Character.valueOf(c) < 0) {return false;} else break;
-            case 2:
-            case 5: if (c != '-') {return false;} else break;
-            case 3: if (Character.valueOf(c) > 3 || Character.valueOf(c) < 0) {return false;} else break;
-            case 6: if (Character.valueOf(c) > 2 || Character.valueOf(c) < 0) { return false; } else break;
+        char c = ' ';
+        for (int i = 0; i < str.length(); i++) {
+            c = str.charAt(i);
+            switch (i) {
+                case 0: if (Character.valueOf(c) > 1 || Character.valueOf(c) < 0) { return false; } else break;
+                case 1:
+                case 4:
+                case 7:
+                case 8:
+                case 9: if (Character.valueOf(c) > 9 || Character.valueOf(c) < 0) {return false;} else break;
+                case 2:
+                case 5: if (c != '-') {return false;} else break;
+                case 3: if (Character.valueOf(c) > 3 || Character.valueOf(c) < 0) {return false;} else break;
+                case 6: if (Character.valueOf(c) > 2 || Character.valueOf(c) < 0) { return false; } else break;
 
-            default: return false;
-        }
-
-    }
-    return true;
-}
-
-//    public static boolean EventPass(String EventID){
-//
-//        return checkLength(EventID) && !checkExisting(EventID) && !hasExceptionalCharacters(EventID);
-//    }
-/*
-    public static boolean checkPwdForValidCharacters(String argPwd) {
-        //returns false in the following cases :
-        //      if incoming String has one or more space or control characters
-        //      if incoming String does not have at least of the following : one letter or number or  special character
-        //return true otherwise
-        boolean foundLetter = false;
-        boolean foundNumber = false;
-        boolean foundSpecialChar = false;
-        for (char c : argPwd.toCharArray()) {
-            if (Character.isISOControl(c) || Character.isSpaceChar(c)) {
-                return false;
-            } else if (Character.isLetter(c)) {
-                foundLetter = true;
-            } else if (Character.isDigit(c)) {
-                foundNumber = true;
-            } else {
-                foundSpecialChar = true;
+                default: return false;
             }
+
         }
-        //checked all characters in the incoming string
-        return( foundLetter && foundNumber && foundSpecialChar );
+        return true;
     }
-*/
-//    public static boolean validPwd(String pwd){
-//        return checkLength_Pwd(pwd) && hasValidCharacters(pwd);
-//    }
-//
-    //public static boolean checkPwd1Pwd2(String argPwd1, String argPwd2){
-    //    if( argPwd1.equals(argPwd2) ){
-    //        return true;
-   //     }else{
-   //         return false;
-   //     }
-   // }
 
     public static String createEvent(String argEventID, String argEventTime, String argEventDate, String argEventLocation) {
 
@@ -166,4 +118,3 @@ public class createEvent
         return "Event Registration Successful";
     }
 }
-
